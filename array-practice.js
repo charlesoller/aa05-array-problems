@@ -49,18 +49,48 @@ const smallerThanCurr = arr => {
 
 
 const twoSum = (arr, target) => {
-
-  // Your code here
+  for(let i = 0; i < arr.length; i++){
+    for(let j = i + 1; j < arr.length; j++){
+      if(arr[i] + arr[j] === target){
+        return true;
+      }
+    }
+  }
+  return false;
 };
 
 const secondLargest = arr => {
-
-  // Your code here
+  if(arr.length < 2) return undefined;
+  let max = arr[0]
+  let spliceIndex = 0;
+  for(let i = 1; i < arr.length; i++){
+    if(arr[i] > max){
+      max = arr[i]
+      spliceIndex = i;
+    }
+  }
+  arr.splice(spliceIndex, 1)
+  let secondLargest = arr[0]
+  for(let i = 1; i < arr.length; i++){
+    if(arr[i] > secondLargest){
+      secondLargest = arr[i]
+    }
+  }
+  return secondLargest
 };
 
 const shuffle = (arr) => {
-
-  // Your code here
+  let randomArr = [];
+  let randomIndexes = []
+  while(randomArr.length !== arr.length){
+    let randomIndex = Math.floor(Math.random() * arr.length);
+    if(!randomIndexes.includes(randomIndex)){
+      randomArr.push(arr[randomIndex])
+      randomIndexes.push(randomIndex)
+    }
+  }
+  console.log(randomArr)
+  return randomArr;
 };
 
 

@@ -8,6 +8,9 @@ const findMinimum = arr => {
   return min;
 };
 
+//time: O(n)
+//space: O(1)
+
 const runningSum = arr => {
   let sumArr = [];
   let runningTotal = 0;
@@ -20,6 +23,9 @@ const runningSum = arr => {
   return sumArr;
 };
 
+//time: O(n)
+//space: O(n)
+
 const evenNumOfChars = arr => {
   let counter = 0;
   for(let i = 0; i < arr.length; i++){
@@ -29,6 +35,9 @@ const evenNumOfChars = arr => {
   }
   return counter;
 };
+
+//time: O(n)
+//space: O(1)
 
 const smallerThanCurr = arr => {
   let smallerArr = [];
@@ -47,6 +56,8 @@ const smallerThanCurr = arr => {
   return smallerArr;
 };
 
+//time: O(n^2)
+//space: O(n)
 
 const twoSum = (arr, target) => {
   for(let i = 0; i < arr.length; i++){
@@ -58,6 +69,9 @@ const twoSum = (arr, target) => {
   }
   return false;
 };
+
+//time: O(n^2)
+//space: O(1)
 
 const secondLargest = arr => {
   if(arr.length < 2) return undefined;
@@ -79,9 +93,12 @@ const secondLargest = arr => {
   return secondLargest
 };
 
+//time: O(n)
+//space: O(1)
+
 const shuffle = (arr) => {
   let randomArr = [];
-  let randomIndexes = []
+  let randomIndexes = [];
   while(randomArr.length !== arr.length){
     let randomIndex = Math.floor(Math.random() * arr.length);
     if(!randomIndexes.includes(randomIndex)){
@@ -93,5 +110,7 @@ const shuffle = (arr) => {
   return randomArr;
 };
 
+//time: O(n)
+//space: O(n)
 
 module.exports = [findMinimum, runningSum, evenNumOfChars, smallerThanCurr, twoSum, secondLargest, shuffle];
